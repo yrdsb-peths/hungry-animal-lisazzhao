@@ -15,5 +15,7 @@ public class Starfish extends Actor
     public void act() 
     {
         // Add your action code here.
+        move(15);
+        turn(10);
     }    
 }
