@@ -1,22 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Starfish here.
+ * The Starfish, the main character of the game, controlled by player.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Lisa Zhao 
+ * @version May 16, 2022
  */
-
 public class Starfish extends Actor
 {
-    int xPos;
-    int yPos;
-    public void addedToWorld(World w)
-    {
-        xPos = getX();
-        yPos = getY();
-    }
-    
     /**
      * Act - do whatever the Starfish wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -28,21 +19,26 @@ public class Starfish extends Actor
         {
             move(-2);
         }
-        if (Greenfoot.isKeyDown("right"))
+        else if (Greenfoot.isKeyDown("right"))
         {
             move(2);
         }
-        if (Greenfoot.isKeyDown("up"))
-        {
-            setLocation(getX(), getY()-2);
-        }
-        if (Greenfoot.isKeyDown("down"))
-        {
-            setLocation(getX(), getY()-(-2));
-        }
+        
+        //remove pizza if eaten
+        eat();
+    }
+    
+    /*
+     * Spawn new pizza if one is eaten
+     */
+    public void eat()
+    {
         if (isTouching(Pizza.class))
         {
             removeTouching(Pizza.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createPizza();
+            world.increaseScore();
         }
-    }    
+    }
 }
