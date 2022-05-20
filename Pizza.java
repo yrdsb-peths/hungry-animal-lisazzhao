@@ -17,12 +17,13 @@ public class Pizza extends Actor
         // Add your action code here.
         setLocation(getX(), getY() + 1);
         
-        //remove the apple and end the game/show "game over"
+        //remove the pizza and end the game/show "game over"
         MyWorld world = (MyWorld) getWorld();
         if(getY() >= world.getHeight())
         {
             world.gameOver();
             world.removeObject(this);
+            world.startOver();
         }
     }    
 }

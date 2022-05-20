@@ -37,7 +37,19 @@ public class MyWorld extends World
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over", 100);
-        addObject(gameOverLabel, 300, 200);
+        addObject(gameOverLabel, 300, 150);
+        Label startOverLabel = new Label("Press <space> to restart", 50);
+        addObject(startOverLabel, 300, 210);
+        Label returnScreen = new Label ("Press <enter> to return to the Title Screen", 35);
+        addObject(returnScreen, 300, 250);
+    }
+    
+    /**
+     * To start over and try again
+     */
+    public void startOver()
+    {
+        setScore(0);
     }
     
     /**
@@ -50,7 +62,15 @@ public class MyWorld extends World
     }
     
     /**
-     * Create a new apple at a random location
+     * Set new score
+     */
+    public void setScore(int newScore)
+    {
+        score = newScore;
+    }
+    
+    /**
+     * Create a new pizza at a random location
      */
     public void createPizza()
     {

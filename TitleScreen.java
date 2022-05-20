@@ -22,7 +22,7 @@ public class TitleScreen extends World
         prepare();
         
         Label instructions1 = new Label ("Use <-- and --> to move", 45);
-        addObject(instructions1, 220, 250);
+        addObject(instructions1, 240, 250);
         
         Label instructions2 = new Label ("Press <space> to start", 45);
         addObject(instructions2, 300, 300);
