@@ -23,7 +23,6 @@ public class Pizza extends Actor
         {
             world.gameOver();
             world.removeObject(this);
-            world.startOver();
         }
     }    
 }

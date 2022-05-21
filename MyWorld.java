@@ -31,6 +31,21 @@ public class MyWorld extends World
         createPizza();
     }
     
+    public void act()
+    {
+        if (Greenfoot.isKeyDown("space"))
+        {
+            setScore(0);
+            MyWorld restartScreen = new MyWorld();
+            Greenfoot.setWorld(restartScreen);
+        }
+        if (Greenfoot.isKeyDown("enter"))
+        {
+            TitleScreen titleScreen = new TitleScreen();
+            Greenfoot.setWorld(titleScreen);
+        }
+    }
+    
     /**
      * end the game and show "game over"
      */
@@ -43,14 +58,10 @@ public class MyWorld extends World
         Label returnScreen = new Label ("Press <enter> to return to the Title Screen", 35);
         addObject(returnScreen, 300, 250);
     }
-    
+
     /**
      * To start over and try again
      */
-    public void startOver()
-    {
-        setScore(0);
-    }
     
     /**
      * Increase score
