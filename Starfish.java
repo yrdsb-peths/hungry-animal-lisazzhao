@@ -9,12 +9,28 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Starfish extends Actor
 {
     GreenfootSound starfishSound = new GreenfootSound("water_sound.mp3");
+    GreenfootImage[] idle = new GreenfootImage[7];
     /**
      * Constructor
      */
     public Starfish()
     {
-        
+        for (int i = 0; i < idle.length; i++)
+        {
+            idle[i] = new GreenfootImage("images/starfish_idle/idle"+ i + ".png");
+            idle[i].scale(100,100);
+        }
+        setImage(idle[0]);
+    }
+    
+    int imageIndex = 0;
+    /**
+     * Animate the starfish
+     */
+    public void animateStarfish()
+    {
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
     }
     
     /**
@@ -35,6 +51,9 @@ public class Starfish extends Actor
         
         //remove pizza if eaten
         eat();
+        
+        //animate the starfish
+        animateStarfish();
     }
     
     /*
