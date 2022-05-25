@@ -9,18 +9,30 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Starfish extends Actor
 {
     GreenfootSound starfishSound = new GreenfootSound("water_sound.mp3");
-    GreenfootImage[] idle = new GreenfootImage[7];
+    GreenfootImage[] idleLeft = new GreenfootImage[7];
+    GreenfootImage[] idleRight = new GreenfootImage[7];
+    
+    //Direction the starfish is facing
+    String facing = "left";
     /**
      * Constructor
      */
     public Starfish()
     {
-        for (int i = 0; i < idle.length; i++)
+        for (int i = 0; i < idleLeft.length; i++)
         {
-            idle[i] = new GreenfootImage("images/starfish_idle/idle"+ i + ".png");
-            idle[i].scale(100,100);
+            idleLeft[i] = new GreenfootImage("images/starfish_idle/idle"+ i + ".png");
+            idleLeft[i].scale(100,100);
         }
-        setImage(idle[0]);
+        
+        for (int i = 0; i < idleRight.length; i++)
+        {
+            idleRight[i] = new GreenfootImage("images/starfish_idle/idle"+ i + ".png");
+            idleRight[i].mirrorHorizontally();
+            idleRight[i].scale(100,100);
+        }
+        //Initial starfish image
+        setImage(idleLeft[0]);
     }
     
     int imageIndex = 0;
@@ -29,8 +41,16 @@ public class Starfish extends Actor
      */
     public void animateStarfish()
     {
-        setImage(idle[imageIndex]);
-        imageIndex = (imageIndex + 1) % idle.length;
+        if (facing.equals("left"))
+        {
+            setImage(idleLeft[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleLeft.length;
+        }
+        else
+        {
+            setImage(idleRight[imageIndex]);
+            imageIndex = (imageIndex +1) % idleRight.length;
+        }
     }
     
     /**
@@ -43,10 +63,12 @@ public class Starfish extends Actor
         if (Greenfoot.isKeyDown("left"))
         {
             move(-2);
+            facing = "left";
         }
         else if (Greenfoot.isKeyDown("right"))
         {
             move(2);
+            facing = "right";
         }
         
         //remove pizza if eaten
