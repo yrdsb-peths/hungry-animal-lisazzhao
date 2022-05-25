@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The World, where the elephant lives.
+ * The World, where the starfish lives.
  * 
  * @author Lisa Zhao
  * @version May 16, 2022
@@ -10,6 +10,9 @@ public class MyWorld extends World
 {
     public int score = 0;
     Label scoreLabel;
+    
+    public int prepTime = 3;
+    Label warmUpLabel;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -27,7 +30,7 @@ public class MyWorld extends World
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 50, 50);
         
-        //create an apple
+        //create a pizza
         createPizza();
     }
     
@@ -58,10 +61,6 @@ public class MyWorld extends World
         Label returnScreen = new Label ("Press <enter> to return to the Title Screen", 35);
         addObject(returnScreen, 300, 250);
     }
-
-    /**
-     * To start over and try again
-     */
     
     /**
      * Increase score

@@ -2,9 +2,12 @@
 comment0.target=Starfish
 comment0.text=\r\n\ The\ Starfish,\ the\ main\ character\ of\ the\ game,\ controlled\ by\ player.\r\n\ \r\n\ @author\ Lisa\ Zhao\ \r\n\ @version\ May\ 16,\ 2022\r\n
 comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Starfish\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.target=Starfish()
+comment1.text=\r\n\ Constructor\r\n
 comment2.params=
-comment2.target=void\ eat()
-comment2.text=\r\n\ Spawn\ new\ pizza\ if\ one\ is\ eaten\r\n
-numComments=3
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Starfish\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=
+comment3.target=void\ eat()
+comment3.text=\r\n\ Spawn\ new\ pizza\ if\ one\ is\ eaten\r\n
+numComments=4

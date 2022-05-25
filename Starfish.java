@@ -8,6 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Starfish extends Actor
 {
+    GreenfootSound starfishSound = new GreenfootSound("water_sound.mp3");
+    /**
+     * Constructor
+     */
+    public Starfish()
+    {
+        
+    }
+    
     /**
      * Act - do whatever the Starfish wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -39,6 +48,7 @@ public class Starfish extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.createPizza();
             world.increaseScore();
+            starfishSound.play();
         }
     }
 }

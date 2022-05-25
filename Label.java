@@ -38,7 +38,7 @@ public class Label extends Actor
         this.fontSize = fontSize;
         updateImage();
     }
-
+    
     /**
      * Sets the value  as text
      * 
