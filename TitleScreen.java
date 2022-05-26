@@ -44,6 +44,6 @@ public class TitleScreen extends World
     private void prepare()
     {
         Starfish st1 = new Starfish();
-        addObject(st1, 479, 87);
+        addObject(st1, 479, 75);
     }
 }

@@ -14,6 +14,7 @@ public class Starfish extends Actor
     
     //Direction the starfish is facing
     String facing = "left";
+    SimpleTimer animationTimer = new SimpleTimer();
     /**
      * Constructor
      */
@@ -31,6 +32,9 @@ public class Starfish extends Actor
             idleRight[i].mirrorHorizontally();
             idleRight[i].scale(100,100);
         }
+        
+        animationTimer.mark();
+        
         //Initial starfish image
         setImage(idleLeft[0]);
     }
@@ -41,6 +45,12 @@ public class Starfish extends Actor
      */
     public void animateStarfish()
     {
+        if (animationTimer.millisElapsed() < 350)
+        {
+            return;
+        }
+        animationTimer.mark();
+        
         if (facing.equals("left"))
         {
             setImage(idleLeft[imageIndex]);
