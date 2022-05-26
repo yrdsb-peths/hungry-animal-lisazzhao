@@ -5,8 +5,8 @@ all he/she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
 PROJECT TITLE: Hungry Starfish
-PURPOSE OF PROJECT:
-VERSION or DATE:
+PURPOSE OF PROJECT: Starfish game
+VERSION or DATE: May 25, 2022
 HOW TO START THIS PROJECT:
 AUTHORS: Lisa Zhao
 USER INSTRUCTIONS:
